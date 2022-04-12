@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">IndependentDialogs</string>
+    <string name="MyTimeDialogFragment">TimeDialogFragment</string>
+    <string name="MyDateDialogFragment">DateDialogFragment</string>
+    <string name="MyProgressDialogFragment">ProgressDialogFragment</string>
+
+</resources>
