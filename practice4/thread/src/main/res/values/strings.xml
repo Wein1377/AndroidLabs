@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">practice4</string>
+    <string name="text1">Введите количество пар и учебных дней</string>
+    <string name="button">Рассчитать</string>
+    <string name="text_classes">Количество пар</string>
+    <string name="text_days">Количество учебных дней</string>
+
+</resources>

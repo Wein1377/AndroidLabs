@@ -1,0 +1,49 @@
+package com.mirea.zarin.looper;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.os.Message;
+import android.view.View;
+
+public class MainActivity extends AppCompatActivity
+{
+    MyLooper myLooper;
+    int age = 20;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        myLooper = new MyLooper();
+        myLooper.start();
+    }
+
+    public void onClick(View view)
+    {
+        long endTime = System.currentTimeMillis() + age * 100;
+        while (System.currentTimeMillis() < endTime)
+        {
+            synchronized (this)
+            {
+                try
+                {
+                    wait(endTime - System.currentTimeMillis());
+                } catch (Exception e)
+                {
+                }
+            }
+        }
+
+        Message msg = new Message();
+        Bundle bundle = new Bundle();
+        bundle.putInt("age", age);
+        bundle.putString("job", "model");
+        msg.setData(bundle);
+        if (myLooper != null)
+        {
+            myLooper.handler.sendMessage(msg);
+        }
+    }
+}

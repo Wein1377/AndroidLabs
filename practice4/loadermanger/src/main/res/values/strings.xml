@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LoaderManger</string>
+    <string name="button">Выполнить</string>
+    <string name="editText">Введите текст</string>
+    <string name="textView">Текст</string>
+
+</resources>
