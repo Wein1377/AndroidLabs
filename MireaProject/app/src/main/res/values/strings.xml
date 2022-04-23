@@ -13,6 +13,8 @@
     <string name="menu_share">Share</string>
     <string name="menu_calculator">Calculator</string>
     <string name="menu_web">Web</string>
+    <string name="menu_player">Player</string>
+
 
     <string name="zero">0</string>
     <string name="one">1</string>

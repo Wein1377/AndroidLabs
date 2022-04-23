@@ -16,5 +16,9 @@
             android:id="@+id/web"
             android:icon="@drawable/ic_menu_web"
             android:title="@string/menu_web" />
+        <item
+            android:id="@+id/musicFragment"
+            android:icon="@drawable/ic_menu_player"
+            android:title="@string/menu_player" />
     </group>
 </menu>
