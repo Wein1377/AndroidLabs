@@ -17,31 +17,10 @@ import android.widget.ImageView;
 public class MusicFragment extends Fragment implements OnClickListener
 {
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    private String mParam1;
-    private String mParam2;
-
-    public MusicFragment()
-    {
-
-    }
-
-    public static MusicFragment newInstance(String param1, String param2)
-    {
-        MusicFragment fragment = new MusicFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     ImageView imageView;
     static int i = 0;
-    static int songs[] = {R.raw.you_say_run, R.raw.gurenge};
-    static int covers[] = {R.drawable.run_cover, R.drawable.gurenge};
+    static int[] songs = {R.raw.you_say_run, R.raw.gurenge};
+    static int[] covers = {R.drawable.run_cover, R.drawable.gurenge};
 
     public static int GetSongId()
     {
@@ -52,27 +31,24 @@ public class MusicFragment extends Fragment implements OnClickListener
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
     ImageButton button_play;
+    ImageButton button_pause;
+    ImageButton button_next;
+    ImageButton button_previous;
 
-   @Override
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_music, container, false);
         imageView = view.findViewById(R.id.Cover);
         button_play = (ImageButton) view.findViewById(R.id.button_play);
         button_play.setOnClickListener(this);
-        ImageButton button_pause = view.findViewById(R.id.button_pause);
+        button_pause = (ImageButton) view.findViewById(R.id.button_pause);
         button_pause.setOnClickListener(this);
-        ImageButton button_stop = view.findViewById(R.id.button_stop);
-        button_stop.setOnClickListener(this);
-        ImageButton button_next = view.findViewById(R.id.button_next);
+        button_next = (ImageButton) view.findViewById(R.id.button_next);
         button_next.setOnClickListener(this);
-        ImageButton button_previous = view.findViewById(R.id.button_previous);
+        button_previous = (ImageButton) view.findViewById(R.id.button_previous);
         button_previous.setOnClickListener(this);
 
         return view;
@@ -97,6 +73,7 @@ public class MusicFragment extends Fragment implements OnClickListener
                 if (i > 1)
                     i = 0;
                 imageView.setImageResource(covers[i]);
+                getActivity().startService(new Intent(getActivity(), PlayerService.class));
             }
                 break;
             case R.id.button_previous:

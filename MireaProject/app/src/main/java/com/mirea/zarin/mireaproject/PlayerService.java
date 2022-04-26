@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
+import android.util.Log;
 
 public class PlayerService extends Service
 {
@@ -17,7 +18,7 @@ public class PlayerService extends Service
     @Override
     public void onCreate()
     {
-        MediaPlayer mediaPlayer = MediaPlayer.create(this, MusicFragment.GetSongId());
+        mediaPlayer = MediaPlayer.create(this, MusicFragment.GetSongId());
         mediaPlayer.setLooping(true);
     }
     @Override
