@@ -1,4 +1,4 @@
-package com.mirea.zarin.mireaproject;
+package com.mirea.zarin.mireaproject.practice3;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.mirea.zarin.mireaproject.R;
 
 public class nav_brouser extends Fragment
 {

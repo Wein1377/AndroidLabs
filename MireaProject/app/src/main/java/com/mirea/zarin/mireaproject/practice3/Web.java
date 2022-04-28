@@ -1,4 +1,4 @@
-package com.mirea.zarin.mireaproject;
+package com.mirea.zarin.mireaproject.practice3;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.mirea.zarin.mireaproject.R;
 
 public class Web extends Fragment
 {

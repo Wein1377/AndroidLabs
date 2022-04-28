@@ -1,4 +1,4 @@
-package com.mirea.zarin.mireaproject;
+package com.mirea.zarin.mireaproject.practice4;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,9 +10,10 @@ import android.view.View.OnClickListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import com.mirea.zarin.mireaproject.R;
 
 public class MusicFragment extends Fragment implements OnClickListener
 {
