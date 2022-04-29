@@ -4,9 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_menu_share.xml" value="0.2085" />
+        <entry key="app/src/main/res/layout/activity_settings.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_audio_recorder.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_camera.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_sensors.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_stories.xml" value="0.22764739990234376" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/stories_view.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.2953125" />
         <entry key="app/src/main/res/menu/main.xml" value="0.2953125" />
         <entry key="app/src/main/res/xml/paths.xml" value="0.19610507246376813" />

@@ -32,5 +32,9 @@
             android:id="@+id/audioRecorder"
             android:icon="@drawable/ic_menu_recorder"
             android:title="@string/menu_recorder" />
+        <item
+            android:id="@+id/stories"
+            android:icon="@drawable/ic_menu_stories"
+            android:title="@string/menu_stories" />
     </group>
 </menu>

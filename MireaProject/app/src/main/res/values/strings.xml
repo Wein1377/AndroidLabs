@@ -16,7 +16,7 @@
     <string name="menu_sensors">Sensors</string>
     <string name="menu_camera">Camera</string>
     <string name="menu_recorder">Recorder</string>
-
+    <string name="menu_stories">Stories</string>
 
     <string name="zero">0</string>
     <string name="one">1</string>
@@ -46,6 +46,13 @@
     <string name="stopRecording">Stop</string>
     <string name="startAudio">Start recording</string>
     <string name="stopAudio">Stop recording</string>
+
+    <string name="settings_name">Name:</string>
+    <string name="settings_name_placeholder">Enter your name</string>
+    <string name="settings_group">Group:</string>
+    <string name="settings_group_placeholder">Enter your group</string>
+    <string name="settings_button">SAVE</string>
+
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

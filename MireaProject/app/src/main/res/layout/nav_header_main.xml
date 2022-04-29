@@ -21,6 +21,7 @@
         app:srcCompat="@mipmap/ic_launcher_foreground_1" />
 
     <TextView
+        android:id="@+id/headerGroup"
         android:layout_width="106dp"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
@@ -28,7 +29,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/headerName"
         android:layout_width="111dp"
         android:layout_height="wrap_content"
         android:text="@string/name" />

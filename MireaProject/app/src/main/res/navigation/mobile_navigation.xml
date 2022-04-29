@@ -40,4 +40,9 @@
         android:name="com.mirea.zarin.mireaproject.practice5.AudioRecorder"
         android:label="fragment_audio_recorder"
         tools:layout="@layout/fragment_audio_recorder" />
+    <fragment
+        android:id="@+id/stories"
+        android:name="com.mirea.zarin.mireaproject.practice6.Stories"
+        android:label="fragment_stories"
+        tools:layout="@layout/fragment_stories" />
 </navigation>
