@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HttpURLConnection</string>
+
+    <string name="myIP">myIP???</string>
+    <string name="myCountry">my country???</string>
+    <string name="myRegion">my region???</string>
+    <string name="myCity">my city???</string>
+    <string name="myTimezone">my timezone?</string>
+    <string name="getIP">GET IP</string>
+</resources>

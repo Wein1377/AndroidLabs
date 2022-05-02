@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">practice7</string>
+
+    <string name="timeText">Time</string>
+    <string name="getTime">GET TIME</string>
+
+</resources>
