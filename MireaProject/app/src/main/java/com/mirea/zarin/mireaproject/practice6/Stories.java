@@ -55,7 +55,7 @@ public class Stories extends Fragment
         {
             View view = inflater.inflate(R.layout.fragment_stories, container, false);
 
-            recyclerView = view.findViewById(R.id.stories);
+            recyclerView = view.findViewById(R.id.stories_view);
 
             this.addButton = view.findViewById(R.id.add_story_button);
             this.addButton.setOnClickListener(this::onButtonClick);
