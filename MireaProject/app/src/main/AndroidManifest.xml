@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.mirea.zarin.mireaproject">
 
     <uses-feature
@@ -36,16 +37,22 @@
             android:exported="true" />
 
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MireaProject.NoActionBar">
+            android:name=".practice7.Authorization"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MireaProject.NoActionBar"
+            tools:ignore="RedundantLabel">
+        </activity>
+
 
         <provider
             android:name="androidx.core.content.FileProvider"
