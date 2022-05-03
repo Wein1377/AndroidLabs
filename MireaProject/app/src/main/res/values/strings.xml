@@ -17,6 +17,7 @@
     <string name="menu_camera">Camera</string>
     <string name="menu_recorder">Recorder</string>
     <string name="menu_stories">Stories</string>
+    <string name="menu_dog">Dog</string>
 
     <string name="zero">0</string>
     <string name="one">1</string>
@@ -52,6 +53,14 @@
     <string name="settings_group">Group:</string>
     <string name="settings_group_placeholder">Enter your group</string>
     <string name="settings_button">SAVE</string>
+
+    <string name="story_add_title">Story adding</string>
+    <string name="story_subject_name">Subject</string>
+    <string name="story_text_name">Text</string>
+    <string name="story_add_subject_placeholder">Enter Subject</string>
+    <string name="story_add_text_placeholder">Enter text</string>
+    <string name="story_add_ok">Add</string>
+    <string name="story_add_cancel">Cancel</string>
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>

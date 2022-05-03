@@ -45,4 +45,9 @@
         android:name="com.mirea.zarin.mireaproject.practice6.Stories"
         android:label="fragment_stories"
         tools:layout="@layout/fragment_stories" />
+    <fragment
+        android:id="@+id/dogFragment"
+        android:name="com.mirea.zarin.mireaproject.practice7.dogFragment"
+        android:label="fragment_dog"
+        tools:layout="@layout/fragment_dog" />
 </navigation>

@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.calculator, R.id.nav_brouser, R.id.web, R.id.musicFragment, R.id.sensors)
+                R.id.calculator, R.id.nav_brouser, R.id.web, R.id.musicFragment, R.id.sensors, R.id.camera, R.id.audioRecorder, R.id.stories, R.id.dogFragment)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

@@ -36,5 +36,9 @@
             android:id="@+id/stories"
             android:icon="@drawable/ic_menu_stories"
             android:title="@string/menu_stories" />
+        <item
+            android:id="@+id/dogFragment"
+            android:icon="@drawable/ic_menu_dog"
+            android:title="@string/menu_dog" />
     </group>
 </menu>
