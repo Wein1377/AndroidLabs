@@ -1,4 +1,4 @@
-package com.mirea.zarin.mireaproject.practice6.db;
+package com.mirea.zarin.mireaproject.db;
 
 import androidx.room.Dao;
 import androidx.room.Delete;

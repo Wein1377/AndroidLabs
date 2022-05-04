@@ -7,10 +7,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
-import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -22,8 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.mirea.zarin.mireaproject.databinding.ActivityMainBinding;
 import com.mirea.zarin.mireaproject.practice6.Settings;
-import com.mirea.zarin.mireaproject.practice6.db.App;
-import com.mirea.zarin.mireaproject.practice6.db.AppDatabase;
+import com.mirea.zarin.mireaproject.db.App;
+import com.mirea.zarin.mireaproject.db.AppDatabase;
 
 public class MainActivity extends AppCompatActivity
 {

@@ -22,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MireaProject"
         android:usesCleartextTraffic="true"
-        android:name=".practice6.db.App">
+        android:name=".db.App">
         <activity
             android:name=".practice6.Settings"
             android:exported="false" />
