@@ -22,6 +22,8 @@
         <entry key="app/src/main/res/layout/fragment_audio_recorder.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_calculator.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_camera.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_dog.xml" value="0.30828094482421886" />
+        <entry key="app/src/main/res/layout/fragment_maps.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_music.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_nav_brouser.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_sensors.xml" value="0.19610507246376813" />
