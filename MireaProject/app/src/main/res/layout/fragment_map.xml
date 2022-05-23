@@ -4,44 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".practice3.Web">
+    tools:context=".practice9.MapFragment">
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="412dp"
-            android:layout_height="129dp"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/mapView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="72dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/searchBar"
+                    android:id="@+id/startPointEdit"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="@string/search_bar"
                     android:inputType="textPersonName" />
 
-                <ImageButton
-                    android:id="@+id/searchButton"
+                <EditText
+                    android:id="@+id/destinationPointEdit"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="?android:attr/actionModeWebSearchDrawable" />
+                    android:ems="10"
+                    android:inputType="textPersonName" />
 
             </LinearLayout>
 
@@ -50,29 +51,21 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/backButton"
+                <Button
+                    android:id="@+id/setPointsButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_previous_button_img_foreground" />
+                    android:text="@string/set_points" />
 
-                <ImageButton
-                    android:id="@+id/forwardButton"
+                <Button
+                    android:id="@+id/drawRouteButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_next_button_img_foreground" />
+                    android:text="@string/draw_route" />
             </LinearLayout>
         </LinearLayout>
 
-        <WebView
-            android:id="@+id/browser"
-            android:layout_width="401dp"
-            android:layout_height="483dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -19,9 +19,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.mirea.zarin.mireaproject.databinding.ActivityMainBinding;
-import com.mirea.zarin.mireaproject.practice6.Settings;
 import com.mirea.zarin.mireaproject.db.App;
 import com.mirea.zarin.mireaproject.db.AppDatabase;
+import com.mirea.zarin.mireaproject.practice6.Settings;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.calculator, R.id.nav_brouser, R.id.web, R.id.musicFragment, R.id.sensors, R.id.camera, R.id.audioRecorder, R.id.stories, R.id.dogFragment)
+                R.id.calculator, R.id.web, R.id.musicFragment, R.id.sensors, R.id.camera, R.id.audioRecorder, R.id.stories, R.id.dogFragment, R.id.photosFragment, R.id.homeFragment, R.id.mapFragment)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -136,5 +136,6 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, Settings.class);
         startActivityForResult(intent, 228);
     }
+
 }
 

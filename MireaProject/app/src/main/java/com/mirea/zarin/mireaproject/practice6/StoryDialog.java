@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
 import com.mirea.zarin.mireaproject.R;
-import com.mirea.zarin.mireaproject.db.Story;
+import com.mirea.zarin.mireaproject.practice6.db.Story;
 
 public class StoryDialog extends DialogFragment
 {

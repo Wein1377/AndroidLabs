@@ -60,7 +60,7 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.MireaProject.NoActionBar"
-            tools:ignore="RedundantLabel"></activity>
+            tools:ignore="RedundantLabel" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

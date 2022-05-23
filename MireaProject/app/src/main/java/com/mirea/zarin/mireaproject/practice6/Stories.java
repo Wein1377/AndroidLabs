@@ -16,8 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mirea.zarin.mireaproject.MainActivity;
 import com.mirea.zarin.mireaproject.R;
-import com.mirea.zarin.mireaproject.db.Story;
-import com.mirea.zarin.mireaproject.db.StoryDao;
+import com.mirea.zarin.mireaproject.practice6.db.Story;
+import com.mirea.zarin.mireaproject.practice6.db.StoryDao;
 
 import java.util.ArrayList;
 import java.util.Collections;

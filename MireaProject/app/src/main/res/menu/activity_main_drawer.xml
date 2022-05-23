@@ -5,9 +5,9 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_brouser"
-            android:icon="@drawable/ic_menu_share"
-            android:title="Share" />
+            android:id="@+id/homeFragment"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/menu_home" />
         <item
             android:id="@+id/calculator"
             android:icon="@drawable/ic_menu_calculator"
@@ -41,7 +41,11 @@
             android:icon="@drawable/ic_menu_dog"
             android:title="@string/menu_dog" />
         <item
-            android:id="@+id/mapsFragment"
+            android:id="@+id/photosFragment"
+            android:icon="@drawable/ic_menu_photos"
+            android:title="@string/menu_photos" />
+        <item
+            android:id="@+id/mapFragment"
             android:icon="@drawable/ic_menu_maps"
             android:title="@string/menu_maps" />
     </group>

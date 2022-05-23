@@ -1,10 +1,8 @@
-package com.mirea.zarin.mireaproject.practice7;
+package com.mirea.zarin.mireaproject.practice8;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Picture;
+import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -12,60 +10,72 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.os.Environment;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.mirea.zarin.mireaproject.MainActivity;
 import com.mirea.zarin.mireaproject.R;
+import com.mirea.zarin.mireaproject.practice3.Web;
+import com.mirea.zarin.mireaproject.practice8.db.Photos;
+import com.mirea.zarin.mireaproject.practice8.db.PhotosDao;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Collections;
+import java.util.List;
 
-public class dogFragment extends Fragment
+public class photoDBFragment extends Fragment
 {
-    WebView dogView;
-    ImageButton refreshButton;
+    private LinearLayout linearLayout;
+    private FloatingActionButton floatingActionButton;
 
     private final String url = "https://dog.ceo/api/breeds/image/random";
+    private String urll = "";
+
+    public static boolean getImageFinished = false;
+
+    private PhotosDao photosDao;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        photosDao = MainActivity.db.photosDao();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.fragment_dog, container, false);
 
-        this.dogView = (WebView) view.findViewById(R.id.dogView);
-        this.refreshButton = (ImageButton) view.findViewById(R.id.refreshButton);
-        this.refreshButton.setOnClickListener(this::onClick);
-        load();
+        View view = inflater.inflate(R.layout.fragment_photos, container, false);
+
+        this.linearLayout = view.findViewById(R.id.photosLinearLayout);
+        this.floatingActionButton = view.findViewById(R.id.addPhoto);
+
+        this.floatingActionButton.setOnClickListener(this::addPhoto);
+
+        loadData();
 
         return view;
     }
 
-    public void load()
+
+    private void addPhoto(View view)
     {
         ConnectivityManager connectivityManager = (ConnectivityManager)requireActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkinfo = null;
@@ -75,31 +85,51 @@ public class dogFragment extends Fragment
         }
         if (networkinfo != null && networkinfo.isConnected())
         {
-            new DownloadPageTask().execute(url);
+            new getImageUrl().execute(url);
+            new ImageBitmap().execute(url);
         } else {
             Toast.makeText(getActivity(), "Нет интернета", Toast.LENGTH_SHORT).show();
         }
+
     }
 
-    public void onClick(View view)
+    private void clearView()
     {
-        load();
+        this.linearLayout.removeAllViewsInLayout();
     }
 
-    @SuppressLint("StaticFieldLeak")
-    private class DownloadPageTask extends AsyncTask<String, Void, String>
+    public void loadData()
     {
+        clearView();
 
-        @Override
-        protected void onPreExecute()
+        List<Photos> photos = photosDao.getAll();
+        Collections.reverse(photos);
+
+        for (Photos photo : photos)
         {
-            super.onPreExecute();
+            Bitmap bitmap = BitmapUtility.getImage(photo.photo);
+
+            ImageView imageView = new ImageView(requireContext());
+            imageView.setImageBitmap(bitmap);
+
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(1000, 1000);
+            layoutParams.setMargins(0, 10, 0, 10);
+            layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
+
+            imageView.setLayoutParams(layoutParams);
+
+            this.linearLayout.addView(imageView);
         }
+    }
+
+    private class getImageUrl extends AsyncTask<String, Void, String>
+    {
         @Override
         protected String doInBackground(String... urls)
         {
             try
             {
+                getImageFinished = false;
                 return downloadIpInfo(urls[0]);
             } catch (IOException e)
             {
@@ -114,8 +144,8 @@ public class dogFragment extends Fragment
             {
                 JSONObject responseJson = new JSONObject(result);
                 String dogURL = responseJson.getString("message");
-                dogView.loadUrl(dogURL);
-
+                setURL(dogURL);
+                getImageFinished = true;
             } catch (JSONException e)
             {
                 e.printStackTrace();
@@ -123,6 +153,56 @@ public class dogFragment extends Fragment
             super.onPostExecute(result);
         }
     }
+
+    private class ImageBitmap extends AsyncTask<String, Void, String>
+    {
+        @Override
+        protected String doInBackground(String... urls)
+        {
+            while (!getImageFinished)
+            {
+                try
+                {
+                    Thread.sleep(1000);
+                    Log.d("AAAAAAAA","wait");
+                } catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+                Bitmap bitmap = null;
+                try
+                {
+                    InputStream input = new java.net.URL(getURL()).openStream();
+                    bitmap = BitmapFactory.decodeStream(input);
+                    byte[] bytes = BitmapUtility.getBytes(bitmap);
+                    photosDao.insert(new Photos(bytes));
+
+                    return downloadIpInfo(urls[0]);
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                    return "error";
+                }
+
+        }
+        @Override
+        protected void onPostExecute(String result)
+        {
+            try
+            {
+                loadData();
+
+            } catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+            super.onPostExecute(result);
+        }
+    }
+
+
     private String downloadIpInfo(String address) throws IOException
     {
         InputStream inputStream = null;
@@ -174,5 +254,14 @@ public class dogFragment extends Fragment
         return data;
     }
 
+    public void setURL(String urll)
+    {
+        this.urll = urll;
+    }
+
+    public String getURL()
+    {
+        return urll;
+    }
 
 }
